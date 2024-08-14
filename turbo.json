@@ -1,0 +1,73 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json", "dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": false
+    },
+    "format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "lint": {
+      "dependsOn": ["^topo", "^build"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo", "^build"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    },
+    "push": {
+      "cache": false,
+      "interactive": true
+    },
+    "studio": {
+      "cache": false,
+      "persistent": true
+    },
+    "drop": {
+      "cache": false
+    },
+    "seed": {
+      "cache": false
+    },
+    "ui-add": {
+      "cache": false,
+      "interactive": true
+    }
+  },
+  "globalEnv": [
+    "MYSQL_URL",
+    "AUTH_GOOGLE_CLIENT_ID",
+    "AUTH_GOOGLE_CLIENT_SECRET",
+    "RESEND_API_KEY",
+    "NEXT_PUBLIC_POSTHOG_HOST",
+    "NEXT_PUBLIC_POSTHOG_KEY",
+    "UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_TOKEN",
+    "DISABLE_UPSTASH_CACHE",
+    "PORT"
+  ],
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "CI",
+    "VERCEL",
+    "VERCEL_ENV",
+    "VERCEL_URL",
+    "npm_lifecycle_event"
+  ]
+}

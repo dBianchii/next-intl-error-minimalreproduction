@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "kdx",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}/apps/kdx/",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "react-email",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}/packages/react-email/",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

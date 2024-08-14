@@ -1,0 +1,9 @@
+{
+  "extends": "@kdx/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "jsx": "preserve"
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.json", "src/next-intl/plugin.js"],
+  "exclude": ["node_modules"]
+}
